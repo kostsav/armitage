@@ -1,0 +1,40 @@
+#Konstantinos Tsavos.
+# A filter to show most common open ports in Windows systems.
+#
+
+filter host_image {
+$address = $2['address'];
+
+if ($address hasservice 21) {
+push($1, script_resource("ftp.png"));
+}
+
+if ($address hasservice 22) {
+push($1, script_resource("ssh.png"));
+}
+
+if ($address hasservice 23) {
+push($1, script_resource("telnet.png"));
+}
+
+if ($address hasservice 25) {
+push($1, script_resource("smtp.png"));
+}
+
+if ($address hasservice 53) {
+push($1, script_resource("dns.png"));
+}
+
+if ($address hasservice 80) {
+push($1, script_resource("http.png"));
+}
+
+if ($address hasservice 445) {
+push($1, script_resource("smb.png"));
+}
+
+if ($address hasservice 3389) {
+push($1, script_resource("rpc.png"));
+}
+return @_;
+}
