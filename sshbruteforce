@@ -4,7 +4,7 @@ println("========================================");
 println("[*] Wait to auto brute force FTP $1");
 println("========================================");
 auxiliary("scanner/ftp/ftp_login", @($1), %(
-USER_FILE => '/home/kostas/Desktop/ftp/creds.txt',   #file path
-PASS_FILE => '/home/kostas/Desktop/ftp/creds.txt'));  #file path
+USER_FILE => '/home/smthing/Desktop/ftp/creds.txt',   #file path
+PASS_FILE => '/home/smthing/Desktop/ftp/creds.txt'));  #file path
 
 }
